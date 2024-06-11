@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat App</title>
+    <link rel="stylesheet" href="/css/chatapp.css">
+</head>
+<body>
+    <h2>Chat App</h2>
+    <div id="chatbox">
+        <!-- Chat messages will be added here -->
+    </div>
+    <div id="userInput">
+        <input type="text" placeholder="Type your message here..." />
+        <button>Send</button>
+    </div>
+    
+    
+    <script>
+        let users = [];
+
+        // Function to handle user login
+        function login(username) {
+            users.push(username);
+            document.getElementById('chatbox').style.display = 'block';
+            showUsers();
+        }
+
+        // Function to show all users
+        function showUsers() {
+            if (users.length > 1) {
+                alert('Logged in users: ' + users.join(', '));
+            }
+        }
+
+        // Function to send a message
+        function sendMessage() {
+            let message = document.querySelector('#userInput input').value;
+            document.querySelector('#userInput input').value = '';
+            let chatbox = document.getElementById('chatbox');
+            chatbox.innerHTML += '<p>' + message + '</p>';
+        }
+
+        // Add event listener to the Send button
+        document.querySelector('#userInput button').addEventListener('click', sendMessage);
+
+
+    </script>
+</body>
+</html>

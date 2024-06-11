@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+#chatbox {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+}
+#userInput {
+    display: flex;
+    margin-top: 10px;
+}
+#userInput input {
+    flex: 1;
+    padding: 10px;
+}
+#userInput button {
+    padding: 10px;
+}
